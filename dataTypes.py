@@ -323,6 +323,81 @@ for date, stop, riders in entries:
 # Print the first 5 items in labeled_entries
 print(labeled_entries[:5])
 
+######################### Dictionaries, ex.15 ################################################
+
+"""
+Leveraging attributes on namedtuples
+Once you have a namedtuple, you can write more expressive code that is easier to understand. Remember, you can access the elements in the tuple by their name as an attribute. 
+"""
+
+# Iterate over the first twenty items in labeled_entries
+for item in labeled_entries[:20]:
+    # Print each item's stop
+    print(item.stop)
+
+    # Print each item's date
+    print(item.date)
+
+    # Print each item's riders
+    print(item.riders)
+
+######################### Dictionaries, ex.16 ################################################
+
+"""
+Strings to DateTimes
+Time to begin your DateTime journey! You'll start by using the .strptime() method from the datetime object as shown in the video, passing it both the string and the format. Strings to DateTimes
+Time to begin your DateTime journey! You'll start by using the .strptime() method from the datetime object as shown in the video, passing it both the string and the format. 
+visit link: https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior
+"""
+
+# Import the datetime object from datetime
+from datetime import datetime
+
+# Iterate over the dates_list 
+for date_str in dates_list:
+    # Convert each date to a datetime object: date_dt
+    date_dt = datetime.strptime(date_str,'%m/%d/%Y')
+    
+    # Print each date_dt
+    print(date_dt)
+
+######################### Dictionaries, ex.17 ################################################
+
+"""
+Converting to a String
+Converting from a datetime object to a string is done with the .strftime() method on a instance of the datetime object. You pass a format string just like the ones used in the prior exercise.
+
+There is also a widely used string output standard called ISO-8601. It has a shortcut method named .isoformat(). I encourage you to use it anytime you write out to a file.
+"""
+
+# Loop over the first 10 items of the datetimes_list
+for item in datetimes_list[:10]:
+    # Print out the record as a string in the format of 'MM/DD/YYYY'
+    print(item.strftime('%m/%d/%Y'))
+
+    # Print out the record as an ISO standard string
+    print(item.isoformat())
+
+######################### Dictionaries, ex.18 ################################################
+
+"""
+Converting to a String
+Converting from a datetime object to a string is done with the .strftime() method on a instance of the datetime object. You pass a format string just like the ones used in the prior exercise.
+
+There is also a widely used string output standard called ISO-8601. It has a shortcut method named .isoformat(). I encourage you to use it anytime you write out to a file.
+"""
+# Loop over the first 10 items of the datetimes_list
+for item in datetimes_list[:10]:
+    # Print out the record as a string in the format of 'MM/DD/YYYY'
+    print(item.strftime('%m/%d/%Y'))
+
+    # Print out the record as an ISO standard string
+    print(item.isoformat())
+    
+
+######################### Dictionaries, ex.19 ################################################
+
+
 
 
 
