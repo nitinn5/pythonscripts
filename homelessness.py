@@ -1,8 +1,4 @@
-# Print the head of the homelessness data
-print(homelessness.head())
 
-# Import pandas using the alias pd
-import pandas as pd
 
 # Print the values of homelessness
 print(homelessness.values)
@@ -15,35 +11,21 @@ print(homelessness.index)
 
 # Sort homelessness by individual
 homelessness_ind = homelessness.sort_values("individuals")
-print(homelessness_ind.head())
 
 # Select the individuals column
 individuals = homelessness["individuals"]
 
-# Print the head of the result
-print(individuals.head())
-
 # Filter for rows where individuals is greater than 10000
 ind_gt_10k = homelessness[homelessness["individuals"]>10000]
 
-# See the result
-print(ind_gt_10k)
-
 # Subset for rows in South Atlantic or Mid-Atlantic regions
 south_mid_atlantic = homelessness[homelessness["region"].isin(["South Atlantic","Mid-Atlantic"])]
-
-# See the result
-print(south_mid_atlantic)
 
 # Add total col as sum of individuals and family_members
 homelessness["total"] = homelessness["individuals"] + homelessness["family_members"]
 
 # Add p_individuals col as proportion of individuals
 homelessness["p_individuals"] = homelessness["individuals"]/homelessness["total"]
-
-# See the result
-print(homelessness.head())
-
 
 # Create indiv_per_10k col as homeless individuals per 10k state pop
 homelessness["indiv_per_10k"] = 10000 * homelessness["individuals"]/ homelessness["state_pop"] 
@@ -56,15 +38,6 @@ high_homelessness_srt = high_homelessness.sort_values("indiv_per_10k",ascending=
 
 # From high_homelessness_srt, select the state and indiv_per_10k cols
 result = high_homelessness_srt[["state","indiv_per_10k"]]
-
-# See the result
-print(result)
-
-# Print the head of the sales DataFrame
-print(sales.head())
-
-# Print the info about the sales DataFrame
-print(sales.info())
 
 # Print the mean of weekly_sales
 print(sales["weekly_sales"].mean())
